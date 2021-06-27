@@ -1,0 +1,11 @@
+{
+  "name": "quizapp",
+  "version": "1.0.0",
+  "description": "This is the server-side of the quiz app",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "author": "",
+  "license": "ISC"
+}
