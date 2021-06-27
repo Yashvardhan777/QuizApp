@@ -11,7 +11,7 @@ app.post('/register', (req, res)=>{
     console.log(req.body);
     res.json({
         message: "Recieved Details"
-    })  
+    })
 })
 
 app.listen(3001, () => {

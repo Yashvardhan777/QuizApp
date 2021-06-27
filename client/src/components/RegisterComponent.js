@@ -22,6 +22,7 @@ export default class RegisterComponent extends PureComponent {
             code
         }).then(response => {
             console.log(response)
+            this.props.onRegistration();
         }).catch(err => {
             console.log(err)
         })
