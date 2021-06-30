@@ -2,7 +2,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import React, { PureComponent } from 'react'
 import axios from 'axios';
 
-export default class RegisterComponent extends PureComponent {
+export default class TeacherRegisterComponent extends PureComponent {
     constructor(props){
         super(props);
         this.state={
@@ -18,11 +18,10 @@ export default class RegisterComponent extends PureComponent {
     handleSubmit(event){
         event.preventDefault();
         let code = this.state
-        axios.post('http://localhost:3001/register', {
+        axios.post('http://localhost:3001/teacher/register', {
             code
         }).then(response => {
-            console.log(response)
-            this.props.onRegistration();
+            console.log(response);
         }).catch(err => {
             console.log(err)
         })

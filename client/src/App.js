@@ -1,21 +1,21 @@
 import './App.css';
-import RegisterComponent from './components/RegisterComponent';
+import NavBar from './components/Navbar';
 import TestComponent from './components/TestComponent';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { useState } from 'react';
+import StudentDashBoard from './components/Student/StudentDashBoard';
+import TeacherDashBoard from './components/Teacher/TeacherDashBoard';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
-	const [isLoggedIn,setIsLoggedIn] = useState(false)
-	function updateLogin(){
-		setIsLoggedIn(true);
-	}
 	return (
 		<div className="App">
 			<div className="container">
 				<BrowserRouter>
+					<NavBar />
 					<Switch>
+						<Route path="/student" component={StudentDashBoard} />
+						<Route path="/teacher" component={TeacherDashBoard} />
 						<Route path="/">
-							{isLoggedIn ? <Redirect to="/test" component={TestComponent} /> : <RegisterComponent isLoggedIn={isLoggedIn} onRegistration={updateLogin}/>}
+							<TestComponent />
 						</Route>
 					</Switch>
 				</BrowserRouter>
